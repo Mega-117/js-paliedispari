@@ -3,39 +3,55 @@ console.log(bntPari);
 const bntDispari = document.getElementById("btn-dispari");
 console.log(bntDispari);
 
-function controlloPariDispari(numero1, numero2) {
-    let somma = numero1 + numero2;
-    if (somma % 2 === 0) {
-        console.log("hai vinto");
+function controlloPariDispari(numero1) {
 
-        let dispari = alert("Hai scelto " + numero1 + " il Pc ha scelto " + numero2 + " La somma è " + somma + " Hai vinto");
-        return dispari;
+    let numeroPc = parseInt(Math.ceil(Math.random() * 5));
+    console.log("numero pc " + numeroPc);
+
+    let somma = numero1 + numeroPc;
+    const sommaNumeri = somma;
+    console.log(sommaNumeri);
+    if (somma % 2 === 0) {
+        somma = "pari";
+        return somma;
+
     } else {
-        console.log("hai perso");
-        let pari = alert("Hai scelto " + numero1 + " il Pc ha scelto " + numero2 + " La somma è " + somma + " Hai Perso");
-        return pari;
+        somma = "dispari";
+        return somma;
+
     }
 }
 
 bntPari.addEventListener("click", function () {
-
     const numeroUtente = parseInt(prompt("insetisci un numero tra 1 e 5"));
     console.log("numero utente " + numeroUtente);
-    const numeroPc = parseInt(Math.ceil(Math.random() * 5));
-    console.log("numero pc " + numeroPc);
 
-    let sommaNumeri = controlloPariDispari(numeroUtente, numeroPc);
-});;
+    let controlloNumero = controlloPariDispari(numeroUtente);
 
-bntDispari.addEventListener("click", function () {
-    numeroUtente = parseInt(prompt("insetisci un numero tra 1 e 5"));
-    console.log("numero utente " + numeroUtente);
+    console.log(controlloNumero);
+    if (controlloNumero === "pari") {
+        alert("hai vinto");
+        console.log(controlloNumero);
+    } else {
+        console.log(controlloNumero);
+        alert("hai perso");
+    }
 
-    numeroPc = parseInt(Math.ceil(Math.random() * 5));
-    console.log("numero pc " + numeroPc);
-
-    numeroFinale = controlloPariDispari(numeroUtente, numeroPc);
 });
 
+bntDispari.addEventListener("click", function () {
+    const numeroUtente = parseInt(prompt("insetisci un numero tra 1 e 5"));
+    console.log("numero utente " + numeroUtente);
 
+    let controlloNumero = controlloPariDispari(numeroUtente);
 
+    console.log(controlloNumero);
+    if (controlloNumero === "dispari") {
+        alert("hai vinto");
+        console.log(controlloNumero);
+    } else {
+        console.log(controlloNumero);
+        alert("hai perso");
+    }
+
+});
