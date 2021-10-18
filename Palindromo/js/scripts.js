@@ -7,9 +7,9 @@ function controlloPalindromi(parola) {
     //invertire la parola con una (funzione) e salvare in una variabile
     const splitParola = parola.split("");
     const parolaReverse = splitParola.reverse();
-    const parolaUtenteReverse = parolaReverse.join("");
+    const joinParola = parolaReverse.join("");
     //confrontare parola inserita con parola invertita
-    if (parolaUtente === parolaUtenteReverse) {
+    if (parolaUtente === joinParola) {
         const palindromo = alert("La parola inserita è un palindromo");
         return palindromo;
     } else {
