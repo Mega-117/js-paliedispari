@@ -34,7 +34,7 @@ bntDispari.addEventListener("click", function () {
     numeroPc = parseInt(Math.ceil(Math.random() * 5));
     console.log("numero pc " + numeroPc);
 
-    sommaNumeri = controlloPariDispari(numeroUtente, numeroPc);
+    numeroFinale = controlloPariDispari(numeroUtente, numeroPc);
 });
 
 
