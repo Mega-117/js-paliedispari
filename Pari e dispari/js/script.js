@@ -1,11 +1,8 @@
-//fare bottone pari
-//fare bottone dispari
-//creo variabile che richiama il btn pari
 const bntPari = document.getElementById("btn-pari");
 console.log(bntPari);
 const bntDispari = document.getElementById("btn-dispari");
 console.log(bntDispari);
-//lo metto in ascolto 
+
 function controlloPariDispari(numero1, numero2) {
     let somma = numero1 + numero2;
     if (somma % 2 === 0) {
@@ -19,6 +16,7 @@ function controlloPariDispari(numero1, numero2) {
         return pari;
     }
 }
+
 bntPari.addEventListener("click", function () {
 
     const numeroUtente = parseInt(prompt("insetisci un numero tra 1 e 5"));
@@ -27,9 +25,17 @@ bntPari.addEventListener("click", function () {
     console.log("numero pc " + numeroPc);
 
     let sommaNumeri = controlloPariDispari(numeroUtente, numeroPc);
-    console.log("la somma è " + sommaNumeri);
 });;
 
+bntDispari.addEventListener("click", function () {
+    numeroUtente = parseInt(prompt("insetisci un numero tra 1 e 5"));
+    console.log("numero utente " + numeroUtente);
+
+    numeroPc = parseInt(Math.ceil(Math.random() * 5));
+    console.log("numero pc " + numeroPc);
+
+    sommaNumeri = controlloPariDispari(numeroUtente, numeroPc);
+});
 
 
 
